@@ -1,0 +1,17 @@
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker app:PropertyPricePredApp
+
+Procfile format
+-	A Procfile declares its process types on individual lines, each with the following format:
+	-	<process type>: <command>
+	-	<process type> is an alphanumeric name for your command, such as web, worker, urgentworker, clock, and so on.
+	-	<command> indicates the command that every dyno of the process type should execute on startup, such as rake jobs: work.
+
+web 	 - is specific to Procfile command convention that will help identify the Heroku deployment process to start a web application with command next to it.
+
+gunicorn - gunicorn is the WSGI server to which we are configuring our application to run on
+
+w 4 	 - indicates that we need our application to run on gunicorn with 4 worker processes. 
+
+k uvicorn.workers.UvicornWorker - tells the gunicorn to run the application using uvicorn.workers.UvicornWorker worker class.
+
+app 	 - app is our module main where our FastAPI() app is initialized

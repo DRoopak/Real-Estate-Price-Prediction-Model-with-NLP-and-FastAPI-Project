@@ -1,0 +1,12 @@
+pip freeze > requirement.txt
+
+fastapi==0.101.0
+joblib==1.1.1
+nltk==3.7
+numpy==1.23.5
+pandas==1.5.3
+pydantic==1.10.12
+scikit_learn==1.2.1
+scipy==1.10.0
+uvicorn==0.23.2
+openpyxl==3.0.10
